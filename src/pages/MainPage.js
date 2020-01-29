@@ -41,6 +41,7 @@ class MainPage extends Component {
       <div>
         <div>
           <h1>hCard Builder</h1>
+
           <form>
             <Input name={'givenName'} handleOnChange={this.onInputChange} />
             <Input name={'surname'} handleOnChange={this.onInputChange} />
@@ -53,18 +54,26 @@ class MainPage extends Component {
             <Input name={'postcode'} handleOnChange={this.onInputChange} />
             <Input name={'country'} handleOnChange={this.onInputChange} />
           </form>
+          <button name="upload">Upload Avatar</button>
+          <button name="create">Create hCard</button>
         </div>
         <div>
-          <p>Name:{givenName}</p>
-          <p>Surname:{surname}</p>
-          <p>Email:{email}</p>
-          <p>Phone:{phone}</p>
-          <p>House Name:{houseName}</p>
-          <p>Street:{street}</p>
-          <p>Suburb:{suburb}</p>
-          <p>State:{state}</p>
-          <p>Postcode:{postcode}</p>
-          <p>Country:{country}</p>
+          <p>
+            {givenName} {surname}
+          </p>
+
+          <p>EMAIL {email}</p>
+          <p>PHONE {phone}</p>
+          <p>
+            ADDRESS {houseName} {street}
+          </p>
+          <p>
+            {suburb}, {state}
+          </p>
+
+          <p>
+            POSTCODE {postcode} COUNTRY {country}
+          </p>
         </div>
       </div>
     );
