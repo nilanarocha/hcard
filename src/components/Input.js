@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Input extends Component {
   render() {
-    const { handleOnChange } = this.props;
-    return <input type="text" onChange={handleOnChange} />;
+    const { handleOnChange, name } = this.props;
+    return <input type="text" name={name} onChange={handleOnChange} />;
   }
 }
 
