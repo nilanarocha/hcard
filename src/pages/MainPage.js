@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Input from '../components/Input';
+import InputWithLabel from '../components/InputWithLabel';
 import HCardPreview from '../components/HCardPreview';
+
+import { SectionStyled } from '../styled';
 
 class MainPage extends Component {
   constructor(props) {
@@ -65,28 +67,28 @@ class MainPage extends Component {
 
     return (
       <div>
-        <div>
+        <SectionStyled>
           <h1>hCard Builder</h1>
           <form>
             <fieldset>
               <legend>PERSONAL DETAILS</legend>
 
-              <Input
+              <InputWithLabel
                 label={'GIVEN NAME'}
                 name={'givenName'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'SURNAME'}
                 name={'surname'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'EMAIL'}
                 name={'email'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'PHONE'}
                 name={'phone'}
                 handleOnChange={this.onInputChange}
@@ -95,32 +97,32 @@ class MainPage extends Component {
             <fieldset>
               <legend>ADDRESS</legend>
 
-              <Input
+              <InputWithLabel
                 label={'HOUSE NAME OR #'}
                 name={'houseName'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'STREET'}
                 name={'street'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'SUBURB'}
                 name={'suburb'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'STATE'}
                 name={'state'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'POSTCODE'}
                 name={'postcode'}
                 handleOnChange={this.onInputChange}
               />
-              <Input
+              <InputWithLabel
                 label={'COUNTRY'}
                 name={'country'}
                 handleOnChange={this.onInputChange}
@@ -131,19 +133,21 @@ class MainPage extends Component {
           <button name="create" onClick={this.downloadHCardFile}>
             Create hCard
           </button>
-        </div>
-        <HCardPreview
-          givenName={givenName}
-          surname={surname}
-          email={email}
-          phone={phone}
-          houseName={houseName}
-          street={street}
-          suburb={suburb}
-          state={state}
-          postcode={postcode}
-          country={country}
-        />
+        </SectionStyled>
+        <SectionStyled>
+          <HCardPreview
+            givenName={givenName}
+            surname={surname}
+            email={email}
+            phone={phone}
+            houseName={houseName}
+            street={street}
+            suburb={suburb}
+            state={state}
+            postcode={postcode}
+            country={country}
+          />
+        </SectionStyled>
       </div>
     );
   }
