@@ -41,18 +41,65 @@ class MainPage extends Component {
       <div>
         <div>
           <h1>hCard Builder</h1>
-
           <form>
-            <Input name={'givenName'} handleOnChange={this.onInputChange} />
-            <Input name={'surname'} handleOnChange={this.onInputChange} />
-            <Input name={'email'} handleOnChange={this.onInputChange} />
-            <Input name={'phone'} handleOnChange={this.onInputChange} />
-            <Input name={'houseName'} handleOnChange={this.onInputChange} />
-            <Input name={'street'} handleOnChange={this.onInputChange} />
-            <Input name={'suburb'} handleOnChange={this.onInputChange} />
-            <Input name={'state'} handleOnChange={this.onInputChange} />
-            <Input name={'postcode'} handleOnChange={this.onInputChange} />
-            <Input name={'country'} handleOnChange={this.onInputChange} />
+            <fieldset>
+              <legend>PERSONAL DETAILS</legend>
+
+              <Input
+                label={'GIVEN NAME'}
+                name={'givenName'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'SURNAME'}
+                name={'surname'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'EMAIL'}
+                name={'email'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'PHONE'}
+                name={'phone'}
+                handleOnChange={this.onInputChange}
+              />
+            </fieldset>
+            <fieldset>
+              <legend>ADDRESS</legend>
+
+              <Input
+                label={'HOUSE NAME OR #'}
+                name={'houseName'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'STREET'}
+                name={'street'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'SUBURB'}
+                name={'suburb'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'STATE'}
+                name={'state'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'POSTCODE'}
+                name={'postcode'}
+                handleOnChange={this.onInputChange}
+              />
+              <Input
+                label={'COUNTRY'}
+                name={'country'}
+                handleOnChange={this.onInputChange}
+              />
+            </fieldset>
           </form>
           <button name="upload">Upload Avatar</button>
           <button name="create">Create hCard</button>

@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 
 class Input extends Component {
   render() {
-    const { handleOnChange, name } = this.props;
-    return <input type="text" name={name} onChange={handleOnChange} />;
+    const { handleOnChange, name, label } = this.props;
+    return (
+      <div>
+        <label>{label}</label>
+        <input type="text" name={name} onChange={handleOnChange} />
+      </div>
+    );
   }
 }
 
