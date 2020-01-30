@@ -24,6 +24,31 @@ class MainPage extends Component {
     this.setState({ [name]: value });
   };
 
+  downloadHCardFile(event) {
+    // Preventing default behavior from browser
+    event.preventDefault();
+    // Creating XMLSerializer
+    // This is required because Hcard content needs to be
+    // a  valid HTML and XMLSerializer will solve the HTML format
+    // When the content is copied.
+    const xmlSerializer = new XMLSerializer();
+    const hCardPreviewHTML =
+      '<html><head></head><body>' +
+      xmlSerializer.serializeToString(
+        document.getElementById('hcard-preview')
+      ) +
+      '</body></html>';
+
+    // Please copy this content and add into the
+    // hCard validator: http://hcard.geekhood.net
+
+    // Forcing browser to download HTML content from HCardPreview component.
+    window.open(
+      'data:application/octet-stream;charset=utf-8,' +
+        encodeURI(hCardPreviewHTML)
+    );
+  }
+
   render() {
     const {
       givenName,
@@ -103,7 +128,9 @@ class MainPage extends Component {
             </fieldset>
           </form>
           <button name="upload">Upload Avatar</button>
-          <button name="create">Create hCard</button>
+          <button name="create" onClick={this.downloadHCardFile}>
+            Create hCard
+          </button>
         </div>
         <HCardPreview
           givenName={givenName}
