@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from '../components/Input';
+import HCardPreview from '../components/HCardPreview';
 
 class MainPage extends Component {
   constructor(props) {
@@ -104,24 +105,18 @@ class MainPage extends Component {
           <button name="upload">Upload Avatar</button>
           <button name="create">Create hCard</button>
         </div>
-        <div>
-          <p>
-            {givenName} {surname}
-          </p>
-
-          <p>EMAIL {email}</p>
-          <p>PHONE {phone}</p>
-          <p>
-            ADDRESS {houseName} {street}
-          </p>
-          <p>
-            {suburb}, {state}
-          </p>
-
-          <p>
-            POSTCODE {postcode} COUNTRY {country}
-          </p>
-        </div>
+        <HCardPreview
+          givenName={givenName}
+          surname={surname}
+          email={email}
+          phone={phone}
+          houseName={houseName}
+          street={street}
+          suburb={suburb}
+          state={state}
+          postcode={postcode}
+          country={country}
+        />
       </div>
     );
   }
