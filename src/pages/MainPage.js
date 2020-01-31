@@ -9,6 +9,7 @@ import {
   FormGroupStyled,
   LegendStyled,
   FielsetStyled,
+  HCardPreviewWrapper,
 } from '../styled';
 
 class MainPage extends Component {
@@ -153,19 +154,20 @@ class MainPage extends Component {
         </SectionStyled>
 
         <SectionStyled>
-          <h1>HCARD PREVIEW</h1>
-          <HCardPreview
-            givenName={givenName}
-            surname={surname}
-            email={email}
-            phone={phone}
-            houseName={houseName}
-            street={street}
-            suburb={suburb}
-            state={state}
-            postcode={postcode}
-            country={country}
-          />
+          <HCardPreviewWrapper>
+            <HCardPreview
+              givenName={givenName}
+              surname={surname}
+              email={email}
+              phone={phone}
+              houseName={houseName}
+              street={street}
+              suburb={suburb}
+              state={state}
+              postcode={postcode}
+              country={country}
+            />
+          </HCardPreviewWrapper>
         </SectionStyled>
       </div>
     );

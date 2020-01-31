@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import { ImageStyled } from '../styled';
+import {
+  ImageStyled,
+  HCardBoxStyled,
+  HCardNameAndPhotoWrapperStyled,
+  HCardNameAndSurnameStyled,
+  H2Styled,
+  HCardPreviewRowStyled,
+  HCardPreviewColStyled,
+  HCardLabelStyled,
+} from '../styled';
 
 class HCardPreview extends Component {
   render() {
@@ -16,52 +25,67 @@ class HCardPreview extends Component {
       country,
     } = this.props;
     return (
-      <div id="hcard-preview" className="hcard-preview">
-        <div className="vcard">
-          <ImageStyled>
-            <img src="/default-image.png" alt="hCard owner" width="90px" />
-          </ImageStyled>
-          <span className="n">
-            {givenName} {surname}
-          </span>
-          <span className="given-name">{givenName}</span>
-          <span className="family-name">{surname}</span>
-          <div className="field">
-            <div className="row">
-              <span className="label">EMAIL</span>
-              <a className="email" href={`mailto:${email}`}>
-                {email}
-              </a>
-            </div>
-            <div className="row">
-              <span className="label">PHONE</span>
-              <span className="tel">{phone}</span>
-            </div>
-            <div className="adr">
-              <div className="row">
-                <span className="label">ADDRESS</span>
+      <div>
+        <H2Styled>HCARD PREVIEW</H2Styled>
+        <HCardBoxStyled id="hcard-preview" className="hcard-preview">
+          <div className="vcard">
+            <HCardNameAndPhotoWrapperStyled>
+              <ImageStyled src="/default-image.png" alt="hCard owner" />
+              <HCardNameAndSurnameStyled
+                className="n"
+                style={{ display: 'none' }}
+              >
+                {givenName} {surname}
+              </HCardNameAndSurnameStyled>
+              <HCardNameAndSurnameStyled className="fn">
+                {givenName} {surname}
+              </HCardNameAndSurnameStyled>
+              {/* <span className="given-name">{givenName}</span>{' '}
+              <span className="family-name">{surname}</span> */}
+            </HCardNameAndPhotoWrapperStyled>
+            <div className="field">
+              <HCardPreviewRowStyled className="row">
+                <HCardLabelStyled className="label">EMAIL</HCardLabelStyled>
+                <a className="email" href={`mailto:${email}`}>
+                  {email}
+                </a>
+              </HCardPreviewRowStyled>
+              <HCardPreviewRowStyled className="row">
+                <HCardLabelStyled className="label">PHONE</HCardLabelStyled>
+                <span className="tel">{phone}</span>
+              </HCardPreviewRowStyled>
+              <div className="adr">
+                <HCardPreviewRowStyled className="row">
+                  <HCardLabelStyled className="label">ADDRESS</HCardLabelStyled>
 
-                <span className="street-address">
-                  {houseName} {street}
-                </span>
-              </div>
-              <div className="row">
-                <span className="label"></span>
-                <span className="locality">{suburb}</span>
+                  <span className="street-address">
+                    {houseName} {street}
+                  </span>
+                </HCardPreviewRowStyled>
+                <HCardPreviewRowStyled className="row">
+                  <HCardLabelStyled className="label"></HCardLabelStyled>
+                  <span className="locality">{suburb}</span>
 
-                {state && <span className="region">, {state}</span>}
-              </div>
-              <div className="col row">
-                <span className="label">POSTCODE</span>
-                <span className="postal-code">{postcode}</span>
-              </div>
-              <div className="col row">
-                <span className="label">COUNTRY</span>
-                <span className="country-name">{country}</span>
+                  {state && <span className="region">, {state}</span>}
+                </HCardPreviewRowStyled>
+                <HCardPreviewRowStyled className="col row">
+                  <HCardPreviewColStyled>
+                    <HCardLabelStyled className="label">
+                      POSTCODE
+                    </HCardLabelStyled>
+                    <span className="postal-code">{postcode}</span>
+                  </HCardPreviewColStyled>
+                  <HCardPreviewColStyled>
+                    <HCardLabelStyled className="label">
+                      COUNTRY
+                    </HCardLabelStyled>
+                    <span className="country-name">{country}</span>
+                  </HCardPreviewColStyled>
+                </HCardPreviewRowStyled>
               </div>
             </div>
           </div>
-        </div>
+        </HCardBoxStyled>
       </div>
     );
   }
