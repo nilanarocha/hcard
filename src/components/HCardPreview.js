@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ImageStyled } from '../styled';
 
 class HCardPreview extends Component {
   render() {
@@ -17,10 +18,9 @@ class HCardPreview extends Component {
     return (
       <div id="hcard-preview" className="hcard-preview">
         <div className="vcard">
-          <div className="fn">
-            {givenName} {surname}
-          </div>
-          <img src="/default-image.png" alt="hCard owner" />
+          <ImageStyled>
+            <img src="/default-image.png" alt="hCard owner" width="90px" />
+          </ImageStyled>
           <span className="n">
             {givenName} {surname}
           </span>
@@ -40,15 +40,16 @@ class HCardPreview extends Component {
             <div className="adr">
               <div className="row">
                 <span className="label">ADDRESS</span>
+
                 <span className="street-address">
                   {houseName} {street}
                 </span>
               </div>
               <div className="row">
                 <span className="label"></span>
-                <span className="locality">{suburb}, </span>
+                <span className="locality">{suburb}</span>
 
-                <span className="region">{state}</span>
+                {state && <span className="region">, {state}</span>}
               </div>
               <div className="col row">
                 <span className="label">POSTCODE</span>

@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import InputWithLabel from '../components/InputWithLabel';
 import HCardPreview from '../components/HCardPreview';
 
-import { SectionStyled } from '../styled';
+import {
+  SectionStyled,
+  ButtonUploadStyled,
+  ButtonCreateStyled,
+  FormGroupStyled,
+  LegendStyled,
+  FielsetStyled,
+} from '../styled';
 
 class MainPage extends Component {
   constructor(props) {
@@ -70,71 +77,83 @@ class MainPage extends Component {
         <SectionStyled>
           <h1>hCard Builder</h1>
           <form>
-            <fieldset>
-              <legend>PERSONAL DETAILS</legend>
+            <FielsetStyled>
+              <LegendStyled>PERSONAL DETAILS</LegendStyled>
 
-              <InputWithLabel
-                label={'GIVEN NAME'}
-                name={'givenName'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'SURNAME'}
-                name={'surname'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'EMAIL'}
-                name={'email'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'PHONE'}
-                name={'phone'}
-                handleOnChange={this.onInputChange}
-              />
-            </fieldset>
-            <fieldset>
-              <legend>ADDRESS</legend>
-
-              <InputWithLabel
-                label={'HOUSE NAME OR #'}
-                name={'houseName'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'STREET'}
-                name={'street'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'SUBURB'}
-                name={'suburb'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'STATE'}
-                name={'state'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'POSTCODE'}
-                name={'postcode'}
-                handleOnChange={this.onInputChange}
-              />
-              <InputWithLabel
-                label={'COUNTRY'}
-                name={'country'}
-                handleOnChange={this.onInputChange}
-              />
-            </fieldset>
+              <FormGroupStyled>
+                <InputWithLabel
+                  label={'GIVEN NAME'}
+                  name={'givenName'}
+                  handleOnChange={this.onInputChange}
+                />
+                <InputWithLabel
+                  label={'SURNAME'}
+                  name={'surname'}
+                  handleOnChange={this.onInputChange}
+                />
+              </FormGroupStyled>
+              <FormGroupStyled>
+                <InputWithLabel
+                  label={'EMAIL'}
+                  name={'email'}
+                  handleOnChange={this.onInputChange}
+                />
+                <InputWithLabel
+                  label={'PHONE'}
+                  name={'phone'}
+                  handleOnChange={this.onInputChange}
+                />
+              </FormGroupStyled>
+            </FielsetStyled>
+            <FielsetStyled>
+              <LegendStyled>ADDRESS</LegendStyled>
+              <FormGroupStyled>
+                <InputWithLabel
+                  label={'HOUSE NAME OR #'}
+                  name={'houseName'}
+                  handleOnChange={this.onInputChange}
+                />
+                <InputWithLabel
+                  label={'STREET'}
+                  name={'street'}
+                  handleOnChange={this.onInputChange}
+                />
+              </FormGroupStyled>
+              <FormGroupStyled>
+                <InputWithLabel
+                  label={'SUBURB'}
+                  name={'suburb'}
+                  handleOnChange={this.onInputChange}
+                />
+                <InputWithLabel
+                  label={'STATE'}
+                  name={'state'}
+                  handleOnChange={this.onInputChange}
+                />
+              </FormGroupStyled>
+              <FormGroupStyled>
+                <InputWithLabel
+                  label={'POSTCODE'}
+                  name={'postcode'}
+                  handleOnChange={this.onInputChange}
+                />
+                <InputWithLabel
+                  label={'COUNTRY'}
+                  name={'country'}
+                  handleOnChange={this.onInputChange}
+                />
+              </FormGroupStyled>
+            </FielsetStyled>
           </form>
-          <button name="upload">Upload Avatar</button>
-          <button name="create" onClick={this.downloadHCardFile}>
+
+          <ButtonUploadStyled name="upload">Upload Avatar</ButtonUploadStyled>
+          <ButtonCreateStyled name="create" onClick={this.downloadHCardFile}>
             Create hCard
-          </button>
+          </ButtonCreateStyled>
         </SectionStyled>
+
         <SectionStyled>
+          <h1>HCARD PREVIEW</h1>
           <HCardPreview
             givenName={givenName}
             surname={surname}
