@@ -12,7 +12,7 @@ class HCardBuilder extends Component {
   render() {
     const { onInputChange } = this.props;
     return (
-      <div>
+      <>
         <H1Styled>hCard Builder</H1Styled>
         <form>
           <FielsetStyled>
@@ -83,7 +83,7 @@ class HCardBuilder extends Component {
             </FormGroupStyled>
           </FielsetStyled>
         </form>
-      </div>
+      </>
     );
   }
 }

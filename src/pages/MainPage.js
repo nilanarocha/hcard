@@ -62,13 +62,14 @@ class MainPage extends Component {
 
   uploadAvatarImage = event => {
     const file = event.target.files[0];
-    const isFileAnImage = file && file.type.includes('image/');
+    const isFileAnImage = file && file.type && file.type.includes('image/');
     if (!isFileAnImage) {
       alert('Avatar file should to be an image');
       return;
     }
 
-    window.URL = window.URL || window.webkitURL;
+    // Checking if URL interface exists in browser
+    // more details in: https://developer.mozilla.org/en-US/docs/Web/API/URL
     if (window.URL) {
       // Creating an url using the file image content
       // to be added in the <img> src
@@ -78,6 +79,8 @@ class MainPage extends Component {
 
   onUploadClick = event => {
     event.preventDefault();
+    // checking if component has a react-reference for input file element
+    // and forcing click on hidden input file.
     if (this._inputFileRef) {
       this._inputFileRef.click();
     }
@@ -99,7 +102,7 @@ class MainPage extends Component {
     } = this.state;
 
     return (
-      <div>
+      <>
         <SectionStyled>
           <HCardBuilder onInputChange={this.onInputChange} />
           <HiddenInput
@@ -133,7 +136,7 @@ class MainPage extends Component {
             />
           </HCardPreviewWrapper>
         </HCardPreviewSectionStyled>
-      </div>
+      </>
     );
   }
 }
