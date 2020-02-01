@@ -21,17 +21,34 @@ src/
 
 ```
 
-### components/
+### `components/`
 
 Folder with all reusible components.
 
-### pages/
+### `pages/`
 
 Folder with page level components.
 
-### styled.js
+### `styled.js`
 
 File with all styled components. All these components are using EmotionJS as a CSS-in-JS solution.
+
+## Setup
+
+> Please make sure you are using nodeJS version as specified in .nvmrc file.
+
+First, install the node version as specified in .nvmrc file
+
+```
+nvm install
+nvm use
+```
+
+After that, run the command to install all the required packages.
+
+```
+npm install
+```
 
 ## Available Scripts commands
 
@@ -57,3 +74,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
+
+## Author
+
+_Nilana Rocha (nilanarocha)_
+
+- <http://github.com/nilanarocha>
