@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import InputWithLabel from '../components/InputWithLabel';
+
 import HCardPreview from '../components/HCardPreview';
 
 import {
   SectionStyled,
   ButtonUploadStyled,
   ButtonCreateStyled,
-  FormGroupStyled,
-  LegendStyled,
-  FielsetStyled,
   HCardPreviewWrapper,
   HCardPreviewSectionStyled,
-  H1Styled,
   HiddenInput,
 } from '../styled';
+import HCardBuilder from '../components/HCardBuilder';
 
 class MainPage extends Component {
   constructor(props) {
@@ -104,76 +101,7 @@ class MainPage extends Component {
     return (
       <div>
         <SectionStyled>
-          <H1Styled>hCard Builder</H1Styled>
-          <form>
-            <FielsetStyled>
-              <LegendStyled>PERSONAL DETAILS</LegendStyled>
-
-              <FormGroupStyled>
-                <InputWithLabel
-                  label={'GIVEN NAME'}
-                  name={'givenName'}
-                  handleOnChange={this.onInputChange}
-                />
-                <InputWithLabel
-                  label={'SURNAME'}
-                  name={'surname'}
-                  handleOnChange={this.onInputChange}
-                />
-              </FormGroupStyled>
-              <FormGroupStyled>
-                <InputWithLabel
-                  label={'EMAIL'}
-                  name={'email'}
-                  handleOnChange={this.onInputChange}
-                />
-                <InputWithLabel
-                  label={'PHONE'}
-                  name={'phone'}
-                  handleOnChange={this.onInputChange}
-                />
-              </FormGroupStyled>
-            </FielsetStyled>
-            <FielsetStyled>
-              <LegendStyled>ADDRESS</LegendStyled>
-              <FormGroupStyled>
-                <InputWithLabel
-                  label={'HOUSE NAME OR #'}
-                  name={'houseName'}
-                  handleOnChange={this.onInputChange}
-                />
-                <InputWithLabel
-                  label={'STREET'}
-                  name={'street'}
-                  handleOnChange={this.onInputChange}
-                />
-              </FormGroupStyled>
-              <FormGroupStyled>
-                <InputWithLabel
-                  label={'SUBURB'}
-                  name={'suburb'}
-                  handleOnChange={this.onInputChange}
-                />
-                <InputWithLabel
-                  label={'STATE'}
-                  name={'state'}
-                  handleOnChange={this.onInputChange}
-                />
-              </FormGroupStyled>
-              <FormGroupStyled>
-                <InputWithLabel
-                  label={'POSTCODE'}
-                  name={'postcode'}
-                  handleOnChange={this.onInputChange}
-                />
-                <InputWithLabel
-                  label={'COUNTRY'}
-                  name={'country'}
-                  handleOnChange={this.onInputChange}
-                />
-              </FormGroupStyled>
-            </FielsetStyled>
-          </form>
+          <HCardBuilder onInputChange={this.onInputChange} />
           <HiddenInput
             type="file"
             onChange={this.uploadAvatarImage}
