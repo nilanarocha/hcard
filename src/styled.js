@@ -178,7 +178,7 @@ const HCardPreviewColStyled = styled.div`
   width: 50%;
 `;
 
-const HCardLabelStyled = styled.label`
+const HCardLabelStyled = styled.span`
   display: inline-block;
   min-width: 100px;
   font-size: 0.8em;

@@ -45,7 +45,7 @@ class HCardPreview extends Component {
 
             <HCardFieldStyled className="field">
               <HCardPreviewRowStyled className="row">
-                <HCardLabelStyled className="label">EMAIL</HCardLabelStyled>
+                <HCardLabelStyled>EMAIL</HCardLabelStyled>
                 <HCardEmailLinkStyled
                   className="email"
                   href={`mailto:${email}`}
@@ -54,34 +54,30 @@ class HCardPreview extends Component {
                 </HCardEmailLinkStyled>
               </HCardPreviewRowStyled>
               <HCardPreviewRowStyled className="row">
-                <HCardLabelStyled className="label">PHONE</HCardLabelStyled>
+                <HCardLabelStyled>PHONE</HCardLabelStyled>
                 <span className="tel">{phone}</span>
               </HCardPreviewRowStyled>
               <div className="adr">
                 <HCardPreviewRowStyled className="row">
-                  <HCardLabelStyled className="label">ADDRESS</HCardLabelStyled>
+                  <HCardLabelStyled>ADDRESS</HCardLabelStyled>
 
                   <span className="street-address">
                     {houseName} {street}
                   </span>
                 </HCardPreviewRowStyled>
                 <HCardPreviewRowStyled className="row">
-                  <HCardLabelStyled className="label"></HCardLabelStyled>
+                  <HCardLabelStyled></HCardLabelStyled>
                   <span className="locality">{suburb}</span>
 
                   {state && <span className="region">, {state}</span>}
                 </HCardPreviewRowStyled>
                 <HCardPreviewRowStyled className="col row">
                   <HCardPreviewColStyled>
-                    <HCardLabelStyled className="label">
-                      POSTCODE
-                    </HCardLabelStyled>
+                    <HCardLabelStyled>POSTCODE</HCardLabelStyled>
                     <span className="postal-code">{postcode}</span>
                   </HCardPreviewColStyled>
                   <HCardPreviewColStyled>
-                    <HCardLabelStyled className="label">
-                      COUNTRY
-                    </HCardLabelStyled>
+                    <HCardLabelStyled>COUNTRY</HCardLabelStyled>
                     <span className="country-name">{country}</span>
                   </HCardPreviewColStyled>
                 </HCardPreviewRowStyled>
