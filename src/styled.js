@@ -56,12 +56,20 @@ const HCardPreviewWrapper = styled.div`
   display: inline-block;
   float: left;
   padding: 30px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const SectionStyled = styled.section`
   float: left;
   width: 50%;
   padding: 30px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const HCardPreviewSectionStyled = styled.section`
@@ -69,6 +77,10 @@ const HCardPreviewSectionStyled = styled.section`
   width: 50%;
   padding: 30px;
   background-color: #e1e4e7;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const ButtonUploadStyled = styled.button`
