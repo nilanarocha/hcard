@@ -26,13 +26,14 @@ class HCardPreview extends Component {
       state,
       postcode,
       country,
+      photo,
     } = this.props;
     return (
       <>
         <H2Styled>HCARD PREVIEW</H2Styled>
         <HCardBoxStyled id="hcard-preview" className="hcard-preview">
           <div className="vcard">
-            <ImageStyled src="/default-image.png" alt="hCard owner" />
+            {photo && <ImageStyled src={photo} alt="hCard owner" />}
             <HCardNameAndPhotoWrapperStyled>
               <HCardNameAndSurnameStyled className="n">
                 <span className="given-name">{givenName}</span>

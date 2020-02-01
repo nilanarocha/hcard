@@ -83,18 +83,22 @@ const HCardPreviewSectionStyled = styled.section`
   }
 `;
 
+const HiddenInput = styled.input`
+  display: none;
+`;
+
 const ButtonUploadStyled = styled.button`
   background-color: #627a8a;
   color: #fff;
   margin-top: 20px;
   margin-bottom: 20px;
-  margind-right: 2%;
+  margin-right: 5%;
   padding: 10px;
   border: 0;
   border-radius: 4px;
   font-size: 20px;
   text-decoration: bold;
-  width: 48%;
+  width: 45%;
   box-shadow: 0 2px 2px -1px #333;
 `;
 
@@ -103,13 +107,13 @@ const ButtonCreateStyled = styled.button`
   color: #fff;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 2%;
+  margin-left: 0;
   padding: 10px;
   border: 0;
   border-radius: 4px;
   font-size: 20px;
   text-decoration: bold;
-  width: 48%;
+  width: 45%;
   box-shadow: 0 2px 4px -1px #333;
 `;
 
@@ -220,4 +224,5 @@ export {
   HCardEmailLinkStyled,
   HCardFormattedNameStyled,
   H1Styled,
+  HiddenInput,
 };

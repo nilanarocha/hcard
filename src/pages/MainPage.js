@@ -12,6 +12,7 @@ import {
   HCardPreviewWrapper,
   HCardPreviewSectionStyled,
   H1Styled,
+  HiddenInput,
 } from '../styled';
 
 class MainPage extends Component {
@@ -28,6 +29,7 @@ class MainPage extends Component {
       state: '',
       postcode: '',
       country: '',
+      photo: '/default-image.png',
     };
   }
 
@@ -61,6 +63,29 @@ class MainPage extends Component {
     );
   }
 
+  uploadAvatarImage = event => {
+    const file = event.target.files[0];
+    const isFileAnImage = file && file.type.includes('image/');
+    if (!isFileAnImage) {
+      alert('Avatar file should to be an image');
+      return;
+    }
+
+    window.URL = window.URL || window.webkitURL;
+    if (window.URL) {
+      // Creating an url using the file image content
+      // to be added in the <img> src
+      this.setState({ photo: window.URL.createObjectURL(file) });
+    }
+  };
+
+  onUploadClick = event => {
+    event.preventDefault();
+    if (this._inputFileRef) {
+      this._inputFileRef.click();
+    }
+  };
+
   render() {
     const {
       givenName,
@@ -73,6 +98,7 @@ class MainPage extends Component {
       state,
       postcode,
       country,
+      photo,
     } = this.state;
 
     return (
@@ -148,8 +174,15 @@ class MainPage extends Component {
               </FormGroupStyled>
             </FielsetStyled>
           </form>
-
-          <ButtonUploadStyled name="upload">Upload Avatar</ButtonUploadStyled>
+          <HiddenInput
+            type="file"
+            onChange={this.uploadAvatarImage}
+            style={{ display: 'none' }}
+            ref={inputRef => (this._inputFileRef = inputRef)}
+          />
+          <ButtonUploadStyled name="upload" onClick={this.onUploadClick}>
+            Upload Avatar
+          </ButtonUploadStyled>
           <ButtonCreateStyled name="create" onClick={this.downloadHCardFile}>
             Create hCard
           </ButtonCreateStyled>
@@ -158,6 +191,7 @@ class MainPage extends Component {
         <HCardPreviewSectionStyled>
           <HCardPreviewWrapper>
             <HCardPreview
+              photo={photo}
               givenName={givenName}
               surname={surname}
               email={email}
