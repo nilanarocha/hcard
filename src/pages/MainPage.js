@@ -10,6 +10,8 @@ import {
   LegendStyled,
   FielsetStyled,
   HCardPreviewWrapper,
+  HCardPreviewSectionStyled,
+  H1Styled,
 } from '../styled';
 
 class MainPage extends Component {
@@ -76,7 +78,7 @@ class MainPage extends Component {
     return (
       <div>
         <SectionStyled>
-          <h1>hCard Builder</h1>
+          <H1Styled>hCard Builder</H1Styled>
           <form>
             <FielsetStyled>
               <LegendStyled>PERSONAL DETAILS</LegendStyled>
@@ -153,7 +155,7 @@ class MainPage extends Component {
           </ButtonCreateStyled>
         </SectionStyled>
 
-        <SectionStyled>
+        <HCardPreviewSectionStyled>
           <HCardPreviewWrapper>
             <HCardPreview
               givenName={givenName}
@@ -168,7 +170,7 @@ class MainPage extends Component {
               country={country}
             />
           </HCardPreviewWrapper>
-        </SectionStyled>
+        </HCardPreviewSectionStyled>
       </div>
     );
   }

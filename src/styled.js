@@ -27,6 +27,7 @@ const FielsetStyled = styled.fieldset`
 const InputWithLabelWrapperStyled = styled.div`
   display: inline-block;
   min-width: 50%;
+  margin-bottom: 20px;
 `;
 
 const InputStyled = styled.input`
@@ -35,11 +36,12 @@ const InputStyled = styled.input`
   border-radius: 5px;
   display: flex;
   width: 90%;
+  font-size: 1.3em;
 `;
 
 const LabelStyled = styled.label`
   color: bold #586d7e;
-  font-size: small;
+  font-size: 12px;
   padding: 0;
   height: 20px;
   display: block;
@@ -48,17 +50,25 @@ const LabelStyled = styled.label`
 // End Form styles
 
 const HCardPreviewWrapper = styled.div`
-  background-color: #e1e4e7;
   min-height: 700px;
   height: 100vh;
+  width: 100%;
+  display: inline-block;
+  float: left;
+  padding: 30px;
 `;
 
 const SectionStyled = styled.section`
   float: left;
-  width: 45%;
-  padding: 1%;
-  margin-left: 40px;
-  color: #394f62;
+  width: 50%;
+  padding: 30px;
+`;
+
+const HCardPreviewSectionStyled = styled.section`
+  float: left;
+  width: 50%;
+  padding: 30px;
+  background-color: #e1e4e7;
 `;
 
 const ButtonUploadStyled = styled.button`
@@ -94,26 +104,41 @@ const ButtonCreateStyled = styled.button`
 const ImageStyled = styled.img`
   float: right;
   width: 80px;
-  margin-right: 30px;
+  margin-right: 3%;
   box-shadow: 0 2px 4px -1px #333;
-  margin-top: 50px;
+  margin-top: 15px;
 `;
 
 const HCardBoxStyled = styled.div`
   background-color: #fff;
   margin: auto 5%;
   width: 90%;
-  height: 450px;
   box-shadow: 0 2px 4px -1px #333;
 `;
 
 const HCardNameAndPhotoWrapperStyled = styled.div`
-  background-color: #2c3e50;
+  background-color: #394f63;
   color: #fff;
-  height: 130px;
+  text-align: left;
+  height: 100px;
+  vertical-align: text-bottom;
+  padding-top: 50px;
+`;
+
+const HCardEmailLinkStyled = styled.a`
+  text-decoration: none;
+  color: #000;
 `;
 
 const HCardNameAndSurnameStyled = styled.span`
+  height: 100px;
+  padding-top: 50px;
+  padding-left: 20px;
+  font-size: 2em;
+  display: none;
+`;
+
+const HCardFormattedNameStyled = styled.span`
   height: 100px;
   padding-top: 50px;
   padding-left: 20px;
@@ -122,17 +147,28 @@ const HCardNameAndSurnameStyled = styled.span`
 
 const H2Styled = styled.h2`
   text-align: right;
-  margin-right: 5%;
   color: #afb8bc;
+  margin-bottom: 14px;
+  display: block;
+  margin-right: 5%;
+  font-size: 18px;
+`;
+
+const H1Styled = styled.h1`
+  font-size: 29px;
+  color: #394f63;
+  font-weight: bold;
 `;
 
 const HCardPreviewRowStyled = styled.div`
   border-bottom: 1px solid #333;
   padding-bottom: 5px;
-  margin-left: 5%;
-  margin-right: 5%;
-  height: 15px;
+  height: 22px;
   margin-top: 30px;
+`;
+
+const HCardFieldStyled = styled.div`
+  padding: 0 5% 5% 5%;
 `;
 
 const HCardPreviewColStyled = styled.div`
@@ -144,7 +180,8 @@ const HCardPreviewColStyled = styled.div`
 
 const HCardLabelStyled = styled.label`
   display: inline-block;
-  min-width: 120px;
+  min-width: 100px;
+  font-size: 0.8em;
 `;
 
 export {
@@ -166,4 +203,9 @@ export {
   HCardPreviewRowStyled,
   HCardPreviewColStyled,
   HCardLabelStyled,
+  HCardPreviewSectionStyled,
+  HCardFieldStyled,
+  HCardEmailLinkStyled,
+  HCardFormattedNameStyled,
+  H1Styled,
 };

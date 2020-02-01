@@ -8,6 +8,9 @@ import {
   HCardPreviewRowStyled,
   HCardPreviewColStyled,
   HCardLabelStyled,
+  HCardFieldStyled,
+  HCardEmailLinkStyled,
+  HCardFormattedNameStyled,
 } from '../styled';
 
 class HCardPreview extends Component {
@@ -25,30 +28,30 @@ class HCardPreview extends Component {
       country,
     } = this.props;
     return (
-      <div>
+      <>
         <H2Styled>HCARD PREVIEW</H2Styled>
         <HCardBoxStyled id="hcard-preview" className="hcard-preview">
           <div className="vcard">
+            <ImageStyled src="/default-image.png" alt="hCard owner" />
             <HCardNameAndPhotoWrapperStyled>
-              <ImageStyled src="/default-image.png" alt="hCard owner" />
-              <HCardNameAndSurnameStyled
-                className="n"
-                style={{ display: 'none' }}
-              >
-                {givenName} {surname}
+              <HCardNameAndSurnameStyled className="n">
+                <span className="given-name">{givenName}</span>
+                <span className="family-name">{surname}</span>
               </HCardNameAndSurnameStyled>
-              <HCardNameAndSurnameStyled className="fn">
+              <HCardFormattedNameStyled className="fn">
                 {givenName} {surname}
-              </HCardNameAndSurnameStyled>
-              {/* <span className="given-name">{givenName}</span>{' '}
-              <span className="family-name">{surname}</span> */}
+              </HCardFormattedNameStyled>
             </HCardNameAndPhotoWrapperStyled>
-            <div className="field">
+
+            <HCardFieldStyled className="field">
               <HCardPreviewRowStyled className="row">
                 <HCardLabelStyled className="label">EMAIL</HCardLabelStyled>
-                <a className="email" href={`mailto:${email}`}>
+                <HCardEmailLinkStyled
+                  className="email"
+                  href={`mailto:${email}`}
+                >
                   {email}
-                </a>
+                </HCardEmailLinkStyled>
               </HCardPreviewRowStyled>
               <HCardPreviewRowStyled className="row">
                 <HCardLabelStyled className="label">PHONE</HCardLabelStyled>
@@ -83,10 +86,10 @@ class HCardPreview extends Component {
                   </HCardPreviewColStyled>
                 </HCardPreviewRowStyled>
               </div>
-            </div>
+            </HCardFieldStyled>
           </div>
         </HCardBoxStyled>
-      </div>
+      </>
     );
   }
 }
